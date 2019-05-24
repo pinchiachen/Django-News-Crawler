@@ -3,7 +3,7 @@
 {% block scripts %}
     <script type="text/javascript">
 
-        var next_url = "https://nba.udn.com/";
+        var next_url = "";
 
         // Initial
         window.onload = function() {
@@ -31,7 +31,7 @@
 
         // Render news html
         function render_news_html(news_data) {
-            console.log("test");
+            console.log(news_data);
 
             var div_news_list = document.getElementById("divNewsList");
 

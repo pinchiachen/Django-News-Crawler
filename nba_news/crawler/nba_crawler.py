@@ -91,6 +91,7 @@ def get_news(pages: int = 10):
             continue
 
     Post.objects.bulk_create(post_list)
+
     print("Save Completed.")
     print("-----Crawler End-----")
 

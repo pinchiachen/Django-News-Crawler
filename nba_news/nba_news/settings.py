@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'nba_news.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'PORT': os.environ.get('DATABASE_PORT'),
+        'NAME': 'db3q0ue2j1oqkt',
+        'USER': 'bjkdeowjmnqdal',
+        'HOST': 'ec2-23-21-148-223.compute-1.amazonaws.com',
+        'PASSWORD': 'c042094a850c6ec198fbf10a3104b58303c31cbb9270940807f5e0c049c146a2',
+        'PORT': '5432',
     }
 }
 
