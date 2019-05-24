@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+        var next_url = "";
+
+        // Initial
+        window.onload = function() {
+            fetch('/api/posts')
+                .then(function (response) {
+                    return response.json()
+                }).then(function (json) {
+                    next_url = json.next;
+                    render_news_list(json.results);
+                }).catch(function (ex) {
+                    console.log(ex);
+                });
+        }
+
+        // Check news data list and render html
+        function render_news_list(news_list) {
+            if (!Array.isArray(news_list)) {
+                news_list = [];
+            }
+
+            for (var i = 0; i < news_list.length; i++) {
+                render_news_html(news_list[i]);
+            }
+        }
+
+        // Render news html
+        function render_news_html(news_data) {
+            console.log(news_data);
+
+            var div_news_list = document.getElementById("divNewsList");
+
+            // Create card div container
+            var container = document.createElement("div");
+            container.classList.add("col-md-4");
+            container.setAttribute("style", "padding-bottom: 15px;");
+            var card = document.createElement("div");
+            card.classList.add("card");
+            // img 
+            var card_img = document.createElement("img");
+            card_img.classList.add("card-img-top");
+            card_img.setAttribute("src", news_data.image_url);
+            card_img.setAttribute("style", "height: 180px; width: 100%;");
+            // body
+            var card_body = document.createElement("div");
+            card_body.classList.add("card-body");
+            // time
+            var card_text_time = document.createElement("p");
+            card_text_time.classList.add("card-text");
+            var small_text = document.createElement("small");
+            small_text.innerText = 
+                new Date(news_data.publish_date).toLocaleString();
+            card_text_time.append(small_text);
+            // title
+            var card_title = document.createElement("h5");
+            card_title.classList.add("card-title");
+            card_title.innerText = news_data.title;
+            // button
+            var card_button = document.createElement("a");
+            card_button.classList.add("btn");
+            card_button.classList.add("btn-outline-dark");
+            card_button.innerText = "Read More";
+            // card_button.setAttribute("href", news_data.source_url);
+            card_button.onclick = function () {
+                show_modal(news_data);
+            };
+            
+            card.append(card_img);
+
+            card_body.append(card_text_time);
+            card_body.append(card_title);
+            card_body.append(card_button);
+            card.append(card_body);
+
+            container.append(card);
+
+            div_news_list.append(container);
+        }
+
+        // Fetch next api to get news list
+        function load_next_news_list() {
+            fetch(next_url)
+                .then(function (response) {
+                    return response.json()
+                }).then(function (json) {
+                    next_url = json.next;
+                    render_news_list(json.results);
+
+                    if (next_url == null || next_url == "") {
+                        var btn_load = document.getElementById("btnLoad");
+                        btn_load.style.display = "none";
+                    }
+                }).catch(function (ex) {
+                    console.log(ex);
+                });
+        }
+
+        // Show modal with data
+        function show_modal(modalData) {
+            // title
+            var modal_title = document.getElementById('modalTitle');
+            modal_title.innerText = modalData.title;
+            // body
+            var modal_body = document.getElementById('modalBody');
+            modal_body.innerText = "";
+            var modal_date = document.createElement("p");
+            modal_date.innerText = 
+                new Date(modalData.publish_date).toLocaleString();
+            modal_body.append(modal_date);
+            var modal_img = document.createElement("img");
+            modal_img.setAttribute("src", modalData.image_url);
+            modal_img.setAttribute("style", "height: auto; width: 100%;");
+            modal_body.append(modal_img);
+            var modal_content = document.createElement("p");
+            modal_content.innerText = modalData.content
+            modal_body.append(modal_content);
+            var modal_source = document.createElement("p");
+            var source = document.createElement("a");
+            source.setAttribute("href", modalData.source_url);
+            source.setAttribute("target", "_blank");
+            source.innerText = modalData.source_url;
+            modal_source.innerText = "Source : ";
+            modal_source.append(source);
+            modal_body.append(modal_source);
+
+            var modal = document.getElementById('divModal');
+            modal.style.display = "block";
+        }
+
+        // Close modal
+        function close_modal() {
+            var modal = document.getElementById('divModal');
+            modal.style.display = "none";
+        }
+
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="row" id="divNewsList"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <button 
+                type="button"
+                id="btnLoad"
+                class="btn btn-light btn-lg btn-block"
+                onclick="load_next_news_list()">
+                More
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="divModal" style="display: none; overflow: auto;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button 
+                        type="button" 
+                        class="close"
+                        onclick="close_modal()">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button 
+                        type="button" 
+                        class="btn btn-secondary"
+                        onclick="close_modal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
