@@ -139,5 +139,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 9
 }
 
-import django_heroku
-django_heroku.settings(locals())
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
