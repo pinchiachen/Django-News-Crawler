@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35668a72-f5a6-4840-9c52-900d2d34a935" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nba_news/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nba_news/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="35668a72-f5a6-4840-9c52-900d2d34a935" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nba_news/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="2650">
+              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
               <folding>
                 <element signature="e#309#318#0" expanded="true" />
               </folding>
@@ -252,12 +250,12 @@
       <updated>1558673352893</updated>
       <workItem from="1558673354395" duration="2442000" />
       <workItem from="1558690736037" duration="12893000" />
-      <workItem from="1558764400561" duration="9588000" />
+      <workItem from="1558764400561" duration="10283000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24923000" />
+    <option name="totallyTimeSpent" value="25618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -371,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nba_news/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="2650">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
           <folding>
             <element signature="e#309#318#0" expanded="true" />
           </folding>
