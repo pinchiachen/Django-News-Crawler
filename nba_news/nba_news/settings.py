@@ -79,15 +79,23 @@ WSGI_APPLICATION = 'nba_news.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT'),
+        'NAME': 'db3q0ue2j1oqkt',
+        'USER': 'bjkdeowjmnqdal',
+        'PASSWORD': 'c042094a850c6ec198fbf10a3104b58303c31cbb9270940807f5e0c049c146a2',
+        'HOST': 'ec2-23-21-148-223.compute-1.amazonaws.com',
+        'PORT': '5432',
 
     }
 }
