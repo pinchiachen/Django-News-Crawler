@@ -27,7 +27,7 @@ def news_crawler(pages: int = 10):
     # 抓取詳細新聞頁面的URL
     page_detail_url = []
     for i in range(pages):
-        res = requests.get(url = f'https://nba.udn.com/nba/cate/6754/-1/newest/({pages}+1)', headers = headers)
+        res = requests.get(url = 'https://nba.udn.com/nba/cate/6754/-1/newest/%d'%(i+1), headers = headers)
         soup = BeautifulSoup(res.text, features='lxml')
         news_list_body = soup.find(id = 'news_list_body')
         for ele in news_list_body.find_all('a'):
@@ -38,6 +38,7 @@ def news_crawler(pages: int = 10):
     for page_url in page_detail_url:
 
         # 新聞ID
+
         post_id = page_url.split('/')[-1]
 
         # 新聞來源URL
