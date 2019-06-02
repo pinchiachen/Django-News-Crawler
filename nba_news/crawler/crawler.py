@@ -40,6 +40,9 @@ def news_crawler(pages: int = 10):
         # 新聞ID
         post_id = page_url.split('/')[-1]
 
+        # 新聞來源URL
+        post_source_url = page_url
+
         try:
             if Post.objects.filter(id=post_id).exists():
                 continue
