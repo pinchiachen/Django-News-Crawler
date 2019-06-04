@@ -54,7 +54,11 @@ DATABASES = {
 
 > 在 Heroku 上運行
 
-- 將程式碼部屬成功後，記得手動啟動 worker，爬蟲檔才會自動執行，並且 Schedule 設定每 30 分鐘爬蟲一次。
+- 將程式碼部屬成功後，記得手動啟動 worker，爬蟲檔才會自動執行。
+
+```
+heroku ps:scale worker=1 --app appname 
+```
 
 ## 你可能會遇到的 Error
 
