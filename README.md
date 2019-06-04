@@ -15,8 +15,7 @@ This is a Django based web with crawler collecting news from nba.udn.com.
 
 ## How To Use
 
-本程式資料庫預設使用Heroku上的PostgreSQL，申請完後記得將你的PostgreSQL頁面setting裡面點選
-View Credentials按鈕，將裡面各種參數填入settings.py裡的DATABASE區塊
+本程式資料庫預設使用 Heroku 上的 PostgreSQL，申請完後記得將你的 PostgreSQL 頁面 setting 裡面點選 View Credentials 按鈕，將裡面各種參數填入 settings.py 裡的 DATABASE 區塊。
 
 ```
 DATABASES = {
