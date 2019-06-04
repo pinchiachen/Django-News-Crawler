@@ -56,3 +56,9 @@ DATABASES = {
 
 - 將程式碼部屬成功後，記得手動啟動 worker，爬蟲檔才會自動執行，並且 Schedule 設定每 30 分鐘爬蟲一次。
 
+## 你可能會遇到的 Error
+
+> psycopg2 版本問題，版本太高會跳 Error
+
+- 將 psycopg2 降至 2.7.3.2
+
