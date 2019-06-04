@@ -74,3 +74,5 @@ heroku ps:scale worker=1 --app appname
 heroku config:set DISABLE_COLLECTSTATIC=1
 ```
 
+## Contact Me
+chenargar@gmail.com
