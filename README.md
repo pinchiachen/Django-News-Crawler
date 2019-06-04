@@ -60,5 +60,13 @@ DATABASES = {
 
 > psycopg2 版本問題，版本太高會跳 Error
 
-- 將 psycopg2 降至 2.7.3.2
+- 將 psycopg2 版本降至 2.7.3.2
+
+> Collectstatic 問題
+
+- Disabling Collectstatic
+
+```
+heroku config:set DISABLE_COLLECTSTATIC=1
+```
 
