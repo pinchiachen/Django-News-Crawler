@@ -26,7 +26,6 @@ DATABASES = {
         'PASSWORD': 'YOUR_PASSWORD',
         'HOST': 'YOUR_HOST',
         'PORT': 'YOUR_PORT',
-
     }
 }
 ```
