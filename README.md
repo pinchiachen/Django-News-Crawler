@@ -54,7 +54,7 @@ DATABASES = {
 
 > 在 Heroku 上運行
 
-- 將程式碼部屬成功後，記得手動啟動 worker，爬蟲檔才會自動執行，worker 啟動與否可以在 Heroku 的專案首頁查看 worker 的指示燈是否為 ON。
+- 將程式碼部屬成功後，記得手動啟動 worker，爬蟲檔才會自動執行，worker 啟動與否可以在 Heroku 的專案首頁 Dyno formation 查看 worker 的指示燈是否為 ON。
 
 ```
 heroku ps:scale worker=1 --app appname 
