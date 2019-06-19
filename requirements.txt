@@ -1,5 +1,5 @@
-Django==2.1.2
-djangorestframework==3.9.0
+Django==2.1.9
+djangorestframework==3.9.1
 gunicorn==19.9.0
 psycopg2==2.7.3.2
 
