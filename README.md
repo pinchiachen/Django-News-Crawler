@@ -20,7 +20,7 @@ https://django-udn-nba-crawler.herokuapp.com
 
 本程式資料庫預設使用 Heroku 上的 PostgreSQL (也就是說你本地不用安裝 PostgreSQL 也能運行)，在你的 Heroku 專案安裝好 PostgreSQL 後，進入你的 PostgreSQL 頁面 Settings 裡面點選 View Credentials 按鈕，將裡面各種參數填入 settings.py 裡的 DATABASE 區塊如下，此時你的資料庫即連線上你 Heroku 專案對應的 PostgreSQL。
 
-```
+```Python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -35,7 +35,7 @@ DATABASES = {
 
 也可以使用自動抓取環境變數的方式如下，但此方式可能會無法在本地端使用。
 
-```
+```Python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -56,7 +56,7 @@ DATABASES = {
 
 - 將程式碼部屬成功後，記得手動啟動 worker 如下，爬蟲檔才會自動執行，worker 啟動與否可以在 Heroku 的專案首頁 Dyno formation 查看 worker 的指示燈是否為 ON。
 
-```
+```shell
 heroku ps:scale worker=1 --app appname 
 ```
 
@@ -70,7 +70,7 @@ heroku ps:scale worker=1 --app appname
 
 - Disabling Collectstatic
 
-```
+```shell
 heroku config:set DISABLE_COLLECTSTATIC=1
 ```
 
