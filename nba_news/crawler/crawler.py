@@ -2,6 +2,7 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
+from run_time import calculate_run_time
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,7 +18,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-
+@calculate_run_time
 def news_crawler(pages: int = 10):
     print('-----Crawler Start-----')
 
