@@ -1,6 +1,6 @@
 # Django News Crawler
 
-This is a Django based web with crawler collecting news from nba.udn.com.
+> *This is a Django based web with crawler collecting news from nba.udn.com.*
 
 ## Demo
 https://django-udn-nba-crawler.herokuapp.com
