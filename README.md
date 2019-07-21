@@ -3,7 +3,8 @@
 > *This is a Django based web with crawler collecting news from nba.udn.com.*
 
 ## Demo
-https://django-udn-nba-crawler.herokuapp.com
+
+- https://django-udn-nba-crawler.herokuapp.com
 
 ## Built With
 
@@ -18,7 +19,7 @@ https://django-udn-nba-crawler.herokuapp.com
 
 ## How To Use
 
-本程式資料庫預設使用 Heroku 上的 PostgreSQL (也就是說你本地不用安裝 PostgreSQL 也能運行)，在你的 Heroku 專案安裝好 PostgreSQL 後，進入你的 PostgreSQL 頁面 Settings 裡面點選 View Credentials 按鈕，將裡面各種參數填入 settings.py 裡的 DATABASE 區塊如下，此時你的資料庫即連線上你 Heroku 專案對應的 PostgreSQL。
+- 本程式資料庫預設使用 Heroku 上的 PostgreSQL (也就是說你本地不用安裝 PostgreSQL 也能運行)，在你的 Heroku 專案安裝好 PostgreSQL 後，進入你的 PostgreSQL 頁面 Settings 裡面點選 View Credentials 按鈕，將裡面各種參數填入 settings.py 裡的 DATABASE 區塊如下，此時你的資料庫即連線上你 Heroku 專案對應的 PostgreSQL。
 
 ```Python
 DATABASES = {
@@ -33,7 +34,7 @@ DATABASES = {
 }
 ```
 
-也可以使用自動抓取環境變數的方式如下，但此方式可能會無法在本地端使用。
+- 也可以使用自動抓取環境變數的方式如下，但此方式可能會無法在本地端使用。
 
 ```Python
 DATABASES = {
@@ -75,4 +76,4 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 ```
 
 ## Contact Me
-chenargar@gmail.com
+- chenargar@gmail.com
